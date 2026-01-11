@@ -1,34 +1,102 @@
 <!DOCTYPE html>
+<!-- Declares the document type and tells the browser this is HTML5 -->
+
 <html lang="en" dir="ltr">
+<!-- Opens the HTML document
+     lang="en" specifies English language
+     dir="ltr" means text flows left-to-right -->
+
   <head>
+    <!-- Head section: contains metadata and links, not visible content -->
+
     <meta charset="utf-8">
+    <!-- Sets character encoding to UTF-8 so special characters display correctly -->
+
     <title>Gym Project</title>
+    <!-- The title shown in the browser tab -->
+
     <link rel="stylesheet" href="style.css">
+    <!-- Links an external CSS file to style the page -->
   </head>
+
   <body>
+    <!-- Body section: contains all visible content -->
+
     <script src="script.js"></script>
-    <video id="background" src="gym-vid.mp4" autoplay muted loop playsinline poster="posterimage.jpg">
+    <!-- Links an external JavaScript file that controls page behavior -->
+
+    <video
+      id="background"
+      src="gym-vid.mp4"
+      autoplay
+      muted
+      loop
+      playsinline
+      poster="posterimage.jpg">
+      <!-- Video element used as a background
+           id="background" allows JavaScript/CSS targeting
+           src specifies the video file
+           autoplay starts video automatically
+           muted allows autoplay without user interaction
+           loop repeats the video forever
+           playsinline prevents fullscreen on mobile
+           poster shows an image before video loads -->
     </video>
+
     <section id="content">
+      <!-- Main content section layered on top of the video -->
+
       <nav>
+        <!-- Navigation bar or header area -->
+
         <b>1/50</b>
+        <!-- Bold text showing a counter (e.g., current gym capacity or scan count) -->
       </nav>
-      <h1><b id="title">Live Gym Tracker Log</b></h1>
+
+      <h1>
+        <!-- Main heading -->
+
+        <b id="title">Live Gym Tracker Log</b>
+        <!-- Bold title text with an ID for JavaScript or CSS -->
+      </h1>
 
       <div class="fields" id="DateTime">
+        <!-- Container for date/time info
+             class="fields" used for shared styling
+             id="DateTime" used for JavaScript targeting -->
+
         <h3><b>Last scan</b></h3>
+        <!-- Section label -->
+
         <p id="time"></p>
+        <!-- Empty paragraph where JavaScript inserts the last scan time -->
       </div>
 
-      <div class="fields" id="person-position"> <!--person-role-->
+      <div class="fields" id="person-position">
+        <!-- Container for role/position data -->
+
         <h3><b>Last scan role</b></h3>
+        <!-- Label for role information -->
+
         <p id="position"></p>
+        <!-- Empty paragraph populated by JavaScript with role info -->
       </div>
 
       <div class="fields" id="people-present">
+        <!-- Container for occupancy data -->
+
         <h3><b>occupancy</b></h3>
+        <!-- Label for occupancy count -->
+
         <p id="occupancy"></p>
+        <!-- Empty paragraph where JavaScript inserts number of people -->
       </div>
+
     </section>
+    <!-- End of content section -->
+
   </body>
+  <!-- End of body -->
+
 </html>
+<!-- End of HTML document -->
