@@ -1,101 +1,243 @@
 *{
+  /* Universal selector: applies styles to ALL elements */
+
   color:white;
+  /* Sets all text color to white */
+
   font-family: 'Glacial Indifference', sans-serif;
+  /* Sets the font for the entire page, with sans-serif fallback */
+
   font-size: max(1rem, 2.5vw);
+  /* Responsive font size:
+     - At least 1rem
+     - Scales up with viewport width */
+
   padding: 0;
+  /* Removes default padding from all elements */
+
   margin: 0;
+  /* Removes default margin from all elements */
+
   overflow: hidden;
+  /* Prevents scrolling and hides overflowing content */
+
   text-align: center;
+  /* Centers text horizontally by default */
 }
+
 body{
+  /* Styles specifically for the body element */
+
   padding: 0;
+  /* Ensures no body padding */
+
   margin: 0;
+  /* Ensures no body margin */
 }
+
 nav{
+  /* Styles the top navigation bar */
+
   position: fixed;
+  /* Keeps the nav bar fixed at the top even when scrolling */
+
   width:100%;
+  /* Makes the nav bar span the full width of the screen */
+
   height: 6vw;
+  /* Responsive height based on viewport width */
+
   top:0;
+  /* Positions the nav bar at the very top */
+
   backdrop-filter:blur(50px);
+  /* Applies a heavy blur effect to content behind the nav */
+
   display: flex;
+  /* Enables Flexbox layout */
+
   align-items: center;
+  /* Vertically centers items inside nav */
+
   justify-content: center;
+  /* Horizontally centers items inside nav */
 }
+
 nav > *{
+  /* Targets all direct children inside nav */
+
   font-size: 4vw
+  /* Makes nav text large and responsive */
 }
+
 #title{
+  /* Styles the main title text */
+
   font-size: 4vw;
+  /* Large responsive font size */
+
   font-weight: bolder;
+  /* Extra bold text for emphasis */
 }
+
 b{
+  /* Styles all bold elements */
+
   text-transform: uppercase;
+  /* Forces all bold text to be uppercase */
 }
+
 #background{
+  /* Styles the background video */
+
   width: 100%;
+  /* Full width */
+
   height: 100svh;
+  /* Full screen height using safe viewport units */
+
   object-fit: cover;
+  /* Ensures video fills screen without distortion */
 }
 
 #content{
+  /* Container for all overlay content */
+
   position: absolute;
+  /* Positions content over the video */
+
   top:0;
+  /* Aligns content to top of page */
+
   width: 100%;
+  /* Full width */
+
   height: 100%;
+  /* Full height */
+
   display: flex;
+  /* Enables Flexbox layout */
+
   justify-content: center;
+  /* Centers content horizontally */
+
   align-items: center;
+  /* Centers content vertically */
+
   z-index: 1;
+  /* Ensures content appears above the video */
 }
 
 .fields{
+  /* Base styling for data display boxes */
+
   position: absolute;
+  /* Allows precise placement on screen */
+
   display: flex;
+  /* Enables Flexbox layout */
+
   flex-direction: column;
+  /* Stacks text vertically */
+
   z-index:1;
+  /* Keeps fields above background */
+
   backdrop-filter:blur(10px);
+  /* Applies glass-like blur effect */
+
   padding:.5rem;
+  /* Adds spacing inside the box */
+
   border-radius: 2vh;
+  /* Rounds corners responsively */
+
   animation: idle 32s infinite;
+  /* Applies a slow horizontal floating animation */
 }
 
 #person-name{
+  /* Positions the person name box */
+
   left:10%;
+  /* Moves box from left edge */
+
   top:15%;
+  /* Moves box from top edge */
 }
 
 #person-position{
+  /* Positions role/status box */
+
   left:2.5%;
+  /* Near the left side */
+
   bottom:25%;
+  /* Positioned from bottom */
 }
 
 #person-access{
+  /* Positions access status box */
+
   left:80%;
+  /* Near the right side */
+
   top:27%;
+  /* Positioned from top */
 }
 
 #people-present{
-  left:50%;
-  transform: translateX(-50%);
-  top:17%;
-  animation-delay:2s;
+  /* Positions occupancy box */
 
+  left:50%;
+  /* Centers horizontally */
+
+  transform: translateX(-50%);
+  /* Corrects centering offset */
+
+  top:17%;
+  /* Positioned near top */
+
+  animation-delay:2s;
+  /* Delays animation start for variation */
 }
+
 #people-present > *{
+  /* Styles all children inside occupancy box */
+
   font-size: 4vw
+  /* Makes occupancy numbers extra large */
 }
 
 #DateTime{
+  /* Positions date and time box */
+
   right:30%;
+  /* Positioned from right edge */
+
   bottom:7%;
+  /* Positioned near bottom */
+
   animation-delay:1s;
+  /* Slight animation offset */
 }
+
 #DateTime > *{
+  /* Styles children inside date/time box */
+
   font-size: 4vw;
+  /* Large readable text */
 }
 
 @keyframes idle{
+  /* Defines a floating side-to-side animation */
+
   0% {transform: translateX(-15%);}
+  /* Start slightly left */
+
   50% {transform: translateX(15%);}
+  /* Move to the right */
+
   100% {transform: translateX(-15%);}
+  /* Return to starting position */
 }
